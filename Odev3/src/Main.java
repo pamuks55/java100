@@ -1,23 +1,36 @@
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.Map;
+import java.util.LinkedHashMap;
 import java.util.Scanner;
-import java.util.TreeMap;
+
 
 public class Main {
-public static void main(String[] args) {
-	Scanner k=new Scanner(System.in);
-	String ism=k.next();
-	Map<Character, Integer> isim=new TreeMap<>();
-	for (int i = 0; i <ism.length() ;i++) {
-	     isim.put(ism.charAt(i), 0);
-	}
-	for (int i = 0; i <ism.length() ;i++) {
-	     int sayac=isim.get(ism.charAt(i));
-	     isim.put(ism.charAt(i), sayac+1);
-	}
-	
-	System.out.println(isim);
 
-}
+
+	static String isimal() 
+	{
+		Scanner k=new Scanner(System.in);
+		String ism=k.next();
+		return ism;
+	}
+
+    static void harfsay()
+    {
+    	String isim=isimal();
+    	LinkedHashMap<Character, Integer> map=new LinkedHashMap();
+    	for (int i = 0; i <isim.length() ;i++) 
+    	{
+    	     map.put(isim.charAt(i), 0);
+    	}
+    	for (int i = 0; i <isim.length() ;i++) 
+    	{
+    	     int sayac=map.get(isim.charAt(i));
+    	     map.put(isim.charAt(i), sayac+1);
+    	}
+    	
+    	System.out.println(map);
+    }
+    public static void main(String[] args) {
+	
+    	harfsay();
+
+    }
 }
