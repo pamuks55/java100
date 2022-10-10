@@ -7,15 +7,17 @@ public class Main {
 
 	static String isimal() 
 	{
-		Scanner k=new Scanner(System.in);
-		String ism=k.next();
-		return ism;
+		try (Scanner k = new Scanner(System.in)) {
+			String ism=k.next();
+			return ism;
+		}
 	}
 
     static void harfsay()
     {
     	String isim=isimal();
-    	LinkedHashMap<Character, Integer> map=new LinkedHashMap();
+    	LinkedHashMap<Character, Integer> map
+        = new LinkedHashMap<Character, Integer>();
     	for (int i = 0; i <isim.length() ;i++) 
     	{
     	     map.put(isim.charAt(i), 0);
